@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import Image from "react-bootstrap/Image";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Logo from "../../assets/logo.png";
 import { Login, selectLoginState } from "../../features/login/loginSlice";
 import { Loader } from "../Loader";
 import "./styles.css";
@@ -67,7 +68,7 @@ const LoginForm = () => {
       <Form className="form-component" onSubmit={handleSubmit} >
         <div className="div-form">
           <div className="div-image">
-            <Image className="image" src="https://lh3.googleusercontent.com/p/AF1QipNkfacHIn50VH7m6_4xtmckJt5-Gruy-7xabtFD" rounded />
+            <Image className="image" src={Logo} rounded />
           </div>
           <Form.Group className="inputs-formGroup" controlId="formBasicEmail">
             <FloatingLabel
