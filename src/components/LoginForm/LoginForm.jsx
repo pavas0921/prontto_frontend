@@ -5,6 +5,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Image from "react-bootstrap/Image";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Login, selectLoginState } from "../../features/login/loginSlice";
 import { Loader } from "../Loader";
 import "./styles.css";
@@ -20,6 +21,7 @@ const LoginForm = () => {
     msg: "",
     status: false,
   });
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   const loginData = useSelector(selectLoginState);
   const {user} = loginData;
@@ -34,7 +36,7 @@ const LoginForm = () => {
       sessionStorage.setItem("token", token)
       sessionStorage.setItem("role", role)
       sessionStorage.setItem("store", store)
-      console.log(user)
+      navigate("/dashboard")
     }
    }, [token]);
 
