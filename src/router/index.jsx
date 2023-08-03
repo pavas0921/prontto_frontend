@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Dashboard, Login } from "../pages/";
+import { Dashboard, Login, UserList } from "../pages/";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -9,6 +9,11 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
+    errorElement: <div> Hubo un error!!</div>,
+  },
+  {
+    path: "/users",
+    element: <UserList />,
     errorElement: <div> Hubo un error!!</div>,
   },
   

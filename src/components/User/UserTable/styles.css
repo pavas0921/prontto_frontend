@@ -1,0 +1,18 @@
+.div-table-user{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.div-title-user{
+    margin-bottom: 20px;
+}
+
+.div-add-button{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
