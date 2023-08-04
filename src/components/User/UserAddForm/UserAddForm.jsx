@@ -16,6 +16,8 @@ const UserAddForm = () => {
     const { rol } = rolData;
     const { rolItem } = rol
 
+    const storeData = useSelector(selectRolState);
+
     const handleInputChange = (e) => {
         console.log("hola")
         const { name, value } = e.target;
