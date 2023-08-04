@@ -8,8 +8,8 @@ const initialState = {
 
 export const getAllRol = createAsyncThunk(
   "users/getAllRol",
-  async () => {
-    const data = await getAllRolApi();
+  async (token) => {
+    const data = await getAllRolApi(token);
     return data;
   }
 );

@@ -1,13 +1,13 @@
-const API_BASE_URL = "https://prontto-backend.onrender.com";
-//const API_BASE_URL = "http://localhost:4000";
+//const API_BASE_URL = "https://prontto-backend.onrender.com";
+const API_BASE_URL = "http://localhost:4000";
 
-export const getAllRolApi = async () => {
+export const getAllRolApi = async (token) => {
     try {
         const url = `${API_BASE_URL}/rol`;
         const req = await fetch(url, {
             method: "GET",
             headers: {
-                //Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${token}`,
             },
           });
       

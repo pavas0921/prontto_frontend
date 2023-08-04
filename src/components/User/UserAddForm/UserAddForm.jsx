@@ -2,17 +2,18 @@ import React, { useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { getAllRol, selectRolState } from "../../../features/rol/rolSlice";
-
 import "./styles.css";
 
 const UserAddForm = () => {
     const [userData, setUserData] = useState({
         name: "", lastname: "", id: "", email: "", password: "", idRol: "", idStore: ""
     });
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const rolData = useSelector(selectRolState);
-    const { rol } = rolData
+    const { rol } = rolData;
     const { rolItem } = rol
 
     const handleInputChange = (e) => {
@@ -29,12 +30,18 @@ const UserAddForm = () => {
     }
 
     useEffect(() => {
-        dispatch(getAllRol());
+        const token = sessionStorage.getItem("token")
+        if (token) {
+            dispatch(getAllRol(token));
+        }
+        else {
+            navigate("/")
+        }
     }, []);
 
     useEffect(() => {
-        console.log(rolItem)
-    }, [rolItem]);
+        console.log(rolData.rol)
+    }, [rolData]);
 
 
     return (
