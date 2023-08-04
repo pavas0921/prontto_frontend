@@ -31,7 +31,7 @@ const UserTable =  () => {
 
 
   const handleAddUser =() =>{
-    console.log("Add user")
+    navigate("/user/add")
   }
   
     return (

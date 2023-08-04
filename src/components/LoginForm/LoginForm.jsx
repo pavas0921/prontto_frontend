@@ -41,6 +41,10 @@ const LoginForm = () => {
     }
    }, [token]);
 
+   useEffect(() => {
+    console.log(user)
+   }, [loginData]);
+
   
 
   const handleSubmit = (e) => {
@@ -97,10 +101,11 @@ const LoginForm = () => {
             </Button>
           </Form.Group>
           {loading && <Loader/>}
-          {message.status && (
-            
+          {message.status && (            
               <Alert variant="warning" >{message.msg}</Alert>
-            
+          )}
+          {user.error && user.message && (
+            <Alert variant="warning" >{user.message}</Alert>
           )}
         </div>
       </Form>
