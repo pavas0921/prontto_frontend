@@ -26,7 +26,6 @@ export const storeSlice = createSlice({
       .addCase(getAllStore.fulfilled, (state, action) => {
         (state.loading = false), (state.store = action.payload);
       });
-      
   },
 });
 
