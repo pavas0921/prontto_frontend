@@ -1,9 +1,9 @@
 //const API_BASE_URL = "https://prontto-backend.onrender.com";
 const API_BASE_URL = "http://localhost:4000";
 
-export const getAllUsersApi = async (token) => {
+export const getAllStoreApi = async (token) => {
     try {
-        const url = `${API_BASE_URL}/user`;
+        const url = `${API_BASE_URL}/store`;
         const req = await fetch(url, {
             method: "GET",
             headers: {

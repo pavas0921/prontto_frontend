@@ -11,83 +11,83 @@ import "./styles.css";
 
 
 
-const UserTable =  () => {
+const UserTable = () => {
   const navigate = useNavigate()
   const data = useSelector(selectUserState);
-  const {users} = data
-  const {item} = users
-  
+  const { users } = data
+  const { item } = users
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     const token = sessionStorage.getItem("token")
-    if(token){
+    if (token) {
       dispatch(getAllUsers(token))
-    }else{
+    } else {
       navigate("/")
     }
-      }, []);
+  }, []);
 
 
 
-  const handleAddUser =() =>{
-    console.log("Add user")
+  const handleAddUser = () => {
+    navigate("/user/add")
   }
-  
-    return (
-        <div className="div-table-user">
-          <div className="div-title-user">
-          <h3>Lista de usuarios</h3>
-          </div>
-          <Table striped responsive>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Nombres</th>
-          <th>Apellidos</th>
-          <th>Cédula</th>
-          <th>Correo</th>
-          <th>Tienda</th>
-          <th>Acciones</th>
-          
-        </tr>
-      </thead>
-      <tbody>
-        {item && item.length > 0 && item.map((row, index)=>(
-          <tr key={index}>
-            <td>{index+1}</td>
-            <td>{row.name}</td>
-            <td>{row.lastname}</td>
-            <td>{row.id}</td>
-            <td>{row.email}</td>
-            <td>{row.idStore.name}</td>
-            <td>
-              <ButtonGroup>
-                {/* Botón de editar */}
-                <button className="btn btn-sm"  >
-                  <FontAwesomeIcon icon={faEdit} />
-                </button>
-                {/* Botón de eliminar */}
-                <button className="btn btn-s"  >
-                  <FontAwesomeIcon icon={faTrash} />
-                </button>
-                {/* Botón de ver detalles */}
-                <button className="btn btn"  >
-                  <FontAwesomeIcon icon={faEye} />
-                </button>
-              </ButtonGroup>
-            </td>
-          </tr>
-        ))}
-        
-      </tbody>
-    </Table>
 
-    <div className="div-add-button">
-    <Button variant="primary" onClick={handleAddUser}>Añadir Usuario</Button>
+  return (
+    <div className="div-table-user">
+      <div className="div-title-user">
+        <h3>Lista de usuarios</h3>
+      </div>
+      <Table striped responsive>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Cédula</th>
+            <th>Correo</th>
+            <th>Tienda</th>
+            <th>Acciones</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {item && item.length > 0 && item.map((row, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
+              <td>{row.name}</td>
+              <td>{row.lastname}</td>
+              <td>{row.id}</td>
+              <td>{row.email}</td>
+              <td>{row.idStore.name}</td>
+              <td>
+                <ButtonGroup>
+                  {/* Botón de editar */}
+                  <button className="btn btn-sm"  >
+                    <FontAwesomeIcon icon={faEdit} />
+                  </button>
+                  {/* Botón de eliminar */}
+                  <button className="btn btn-s"  >
+                    <FontAwesomeIcon icon={faTrash} />
+                  </button>
+                  {/* Botón de ver detalles */}
+                  <button className="btn btn"  >
+                    <FontAwesomeIcon icon={faEye} />
+                  </button>
+                </ButtonGroup>
+              </td>
+            </tr>
+          ))}
+
+        </tbody>
+      </Table>
+
+      <div className="div-add-button">
+        <Button variant="primary" onClick={handleAddUser}>Añadir Usuario</Button>
+      </div>
     </div>
-        </div>
-      );
+  );
 }
 
 export default UserTable
