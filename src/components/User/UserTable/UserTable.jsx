@@ -28,10 +28,19 @@ const UserTable = () => {
     }
   }, []);
 
+  useEffect(() => {
+    console.log(item)
+  }, [item]);
+
 
 
   const handleAddUser = () => {
     navigate("/user/add")
+  }
+
+  const goToUser = (_id) => {
+    navigate(`/user/${_id}`)
+    console.log("id", _id)
   }
 
   return (
@@ -64,7 +73,7 @@ const UserTable = () => {
               <td>
                 <ButtonGroup>
                   {/* Botón de editar */}
-                  <button className="btn btn-sm"  >
+                  <button className="btn btn-sm" onClick={() => goToUser(row._id)}  >
                     <FontAwesomeIcon icon={faEdit} />
                   </button>
                   {/* Botón de eliminar */}

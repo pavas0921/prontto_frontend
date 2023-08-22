@@ -40,3 +40,27 @@
  .user-form-inputs{
      width: 90%;
  }
+
+ .div_loader{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+ }
+
+ .div-button{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+ }
+
+ .button{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+ }
