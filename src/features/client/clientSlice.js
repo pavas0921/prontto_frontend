@@ -1,6 +1,6 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { createClientAPI } from "../../services/client";
+import { createClientAPI, getAllClientsApi } from "../../services/client";
 
 const initialState = {
     clients: [],
@@ -15,12 +15,27 @@ const initialState = {
     }
   );
 
+  export const getAllClient = createAsyncThunk(
+    "clients/getAllClients",
+    async () => {
+      const data = await getAllClientsApi();
+      return data;
+    }
+  );
+
   export const clientSlice = createSlice({
     name: "clients",
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-      builder        
+      builder
+      .addCase(getAllClient.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getAllClient.fulfilled, (state, action) => {
+          state.loading = false;
+          state.clients = action.payload;
+      })        
         .addCase(createClient.pending, (state) => {
           state.loading = true;
         })
