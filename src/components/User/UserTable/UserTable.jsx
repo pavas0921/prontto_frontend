@@ -45,9 +45,12 @@ const UserTable = () => {
 
   return (
     <div className="div-table-user">
+
       <div className="div-title-user">
         <h3>Lista de usuarios</h3>
       </div>
+
+
       <Table striped responsive>
         <thead>
           <tr>
@@ -91,6 +94,7 @@ const UserTable = () => {
 
         </tbody>
       </Table>
+
 
       <div className="div-add-button">
         <Button variant="primary" onClick={handleAddUser}>Añadir Usuario</Button>
