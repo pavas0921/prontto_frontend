@@ -9,8 +9,10 @@ import {
     selectStoreState
 } from "../../../features/store/storeSlice";
 import { getUserById, selectUserState, updateUser } from "../../../features/user/userSlice";
+import { decodeToken } from '../../../helpers/decodeToken';
 import { Loader } from "../../Loader";
 import "./styles.css";
+
 
 
 const UserProfile = () => {
@@ -31,9 +33,10 @@ const UserProfile = () => {
     const { item } = users
     const token = sessionStorage.getItem("token")
 
-
     useEffect(() => {
         if (token) {
+            const decodedToken = decodeToken(token);
+            console.log("token", decodedToken)
             if (!item) {
                 dispatch(getUserById(id))
             }
