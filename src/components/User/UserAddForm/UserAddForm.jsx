@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,7 +10,6 @@ import {
   selectStoreState,
 } from "../../../features/store/storeSlice";
 import { createUser, selectUserState } from "../../../features/user/userSlice";
-import Alert from "react-bootstrap/Alert";
 import "./styles.css";
 
 const UserAddForm = () => {
@@ -59,7 +59,7 @@ const UserAddForm = () => {
     }
   }, []);
 
-  useEffect(() => {}, [dataRol]);
+  useEffect(() => { }, [dataRol]);
 
   useEffect(() => {
     if (userInfo.users.status === 201) {

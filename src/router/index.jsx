@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { UserProfile } from "../components/User/UserProfile";
-import { Dashboard, Login, UserCreation, UserList } from "../pages/";
+import { ClientCreation, Dashboard, Login, UserCreation, UserList } from "../pages/";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +27,11 @@ const router = createBrowserRouter([
     element: <UserProfile />,
     errorElement: <div> Hubo un error!!</div>,
   },
+  {
+    path: "/cliente/add",
+    element: <ClientCreation />,
+    errorElement: <div> Hubo un error!!</div>,
+  }
 
 ]);
 
