@@ -1,0 +1,66 @@
+.div-profile-main{
+    width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     margin-top:60px;
+ }
+ 
+ .div-user-title{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 20px;
+ }
+ 
+ .form-user{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .form {
+     display: flex;
+     width: 100%;
+     justify-content: center;
+     align-items: center;
+     flex-direction: row;
+     flex-wrap: wrap;
+ }
+ 
+ .div-user-inputs{
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-direction: column;
+     width: 100%;
+ }
+ 
+ .user-form-inputs{
+     width: 90%;
+ }
+
+ .div_loader{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+ }
+
+ .div-button{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+ }
+
+ .button{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+ }
