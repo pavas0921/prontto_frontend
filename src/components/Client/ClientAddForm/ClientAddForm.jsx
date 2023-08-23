@@ -128,7 +128,7 @@ const ClientAddForm = () => {
 
             {!loading && message && status === 201 && (
                 <div className='mt-5'>
-                    <Alert variant="warning" >{{ message }}</Alert>
+                    <Alert variant="warning" >{message}</Alert>
                 </div>
             )}
 
