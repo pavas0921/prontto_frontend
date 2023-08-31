@@ -8,8 +8,15 @@ import { useNavigate } from 'react-router';
 
 const NavbarComponent = () => {
   const navigate = useNavigate()
+
   const handleCreateUser = () => {
     navigate("/users")
+  }
+  const handleCreateClient = () => {
+    navigate("/cliente/add")
+  }
+  const handleClientList = () => {
+    navigate("/clientes")
   }
 
   const goTo = (path) => {
@@ -23,16 +30,9 @@ const NavbarComponent = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown title="CLIENTES" id="collasible-nav-dropdown" onClick={goTo("cliente/add")}>
-              <NavDropdown.Item href="#action/3.1">Crear Cliente</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+            <NavDropdown title="CLIENTES" id="collasible-nav-dropdown">
+              <NavDropdown.Item onClick={handleCreateClient}>Crear Cliente</NavDropdown.Item>
+              <NavDropdown.Item onClick={handleClientList}>Listado de Clientes</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">

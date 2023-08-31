@@ -3,6 +3,7 @@ import { Alert } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from "react-bootstrap/Form";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom';
 import { createClient, selectClientState } from "../../../features/client/clientSlice";
 import { Loader } from '../../Loader';
 import "./styles.css";
@@ -18,6 +19,7 @@ const ClientAddForm = () => {
         email: "",
     });
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const clientInfo = useSelector(selectClientState);
     const { loading, clients } = clientInfo
     const { status, message, client } = clients
@@ -39,6 +41,10 @@ const ClientAddForm = () => {
         //const token = sessionStorage.getItem("token");
         dispatch(createClient(clientData));
     };
+
+    const goTo = () => {
+        navigate("/clientes")
+    }
 
 
     return (
@@ -114,8 +120,8 @@ const ClientAddForm = () => {
                         </div>
                     </div>
                     <div className='client-add-button'>
-                        <Button variant="primary" type='submit'>Registrar Usuario</Button>
-                        <Button variant="primary">Listado de Usuarios</Button>
+                        <Button variant="primary" type='submit'>Registrar Cliente</Button>
+                        <Button variant="primary" onClick={goTo}>Listado de Clientes</Button>
                     </div>
                 </Form>
             </div>
